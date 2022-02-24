@@ -1,10 +1,17 @@
-from pytube import YouTube
+import pytube
 import datetime
 
-url_video = YouTube("https://www.youtube.com/watch?v=WuiY_f0NUzE")
+url = input("Url do youtube: ")
 
-descricao = url_video.description
-print(descricao)
+url_video = pytube.YouTube(url)
+
+video = url_video.streams.first()
+
+#aumentar a resolução
+#video = url_video.streams.get_highest_resolution()
+
+video.download()
+
 
 duracao_video = url_video.length
 duracao_video_formatada = datetime.timedelta(seconds=duracao_video)
