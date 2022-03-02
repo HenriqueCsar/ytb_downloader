@@ -1,22 +1,20 @@
 import pytube
-import datetime
+import datetime, eel
 
-url = input("Url do youtube: ")
+eel.init("view")
 
-url_video = pytube.YouTube(url)
-
-video = url_video.streams.first()
-
-#aumentar a resolução
-#video = url_video.streams.get_highest_resolution()
-
-video.download()
+@eel.expose
+def download_video(url):
+    url_video = pytube.YouTube(url)
+    video = url_video.streams.first()
+    video.download('./Downloads')
 
 
-duracao_video = url_video.length
-duracao_video_formatada = datetime.timedelta(seconds=duracao_video)
-print(f"O vídeo dura {duracao_video_formatada}")
+# duracao_video = url_video.length
+# duracao_video_formatada = datetime.timedelta(seconds=duracao_video)
+# print(f"O vídeo dura {duracao_video_formatada}")
 
-data_publicacao = url_video.publish_date
-print(f"O vídeo foi postado {data_publicacao}")
+# data_publicacao = url_video.publish_date
+# print(f"O vídeo foi postado {data_publicacao}")
 
+eel.start("index.html")
