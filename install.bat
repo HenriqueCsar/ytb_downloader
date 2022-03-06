@@ -1,4 +1,5 @@
 @echo off
-py -m pip install eel 
-py -m pip install pytube
-pause>nul
+echo Instalação Iniciada...
+py -m pip install eel >nul
+py -m pip install pytube >nul
+py -m pip install speechRecognition >nul
