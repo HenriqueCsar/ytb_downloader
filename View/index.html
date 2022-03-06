@@ -14,16 +14,30 @@
 <body>
     <div class="container">
         <br>
+        
             <h2 style="position:relative; left:38%; width:30%;"><img width="60px" style="position:absolute; left:-60px;" src="Features/imgs/logo-frente-icon.png">Youtube Download</h2>
             <label>Url do vídeo</label><br>
-            <textarea id="url" class="form-control" style="height:40px;  resize: none;
-            "></textarea>
-            <br> 
-            <button type = "button" id = "download_video" onclick="donwload()" class="btn btn-danger">  
+            <div class="row">
+                <div class="col-9">
+                    
+                    <textarea id="url" class="form-control" style="height:40px;  resize: none;
+                    "></textarea>
+                </div>
+                <div class="col">
+                    <label style="float:left; width:40%;" class="input-group-text" for="gender3">Formato</label>
+                    <select style="float:right; width:60%;" class="custom-select" id="gender3">
+                        <option>mp3</option>
+                        <option>ogg</option>
+                        <option>wav</option>
+                    </select>
+                </div>
+            </div>
+             <br> 
+            <button type = "button" id = "download_video" onclick="download()" class="btn btn-danger">  
                     Baixar Video  
                 </button> 
     </div> 
 </body>
 <script type="text/javascript" src="/eel.js"></script>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="/script.js"></script>
 </html>
