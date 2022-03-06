@@ -5,7 +5,7 @@ eel.init("view")
 
 @eel.expose
 def download_video(url, convert):
-    list_of_result = {'duration':'', 'title':''}
+    list_of_result = {'duration':'', 'title':'', 'thumb':''}
 
     
     url_video = pytube.YouTube(url)
@@ -30,13 +30,13 @@ def download_video(url, convert):
     titulo_video = url_video.title
     list_of_result['title'] = titulo_video
 
+    # thumb
+    thumb_video = url_video.thumbnail_url
+    list_of_result['thumb'] = thumb_video
 
 
     subprocess.call('cls', shell=True)
     return list_of_result
-
-                      
-
 
 
 
